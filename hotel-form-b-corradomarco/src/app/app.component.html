@@ -10,12 +10,40 @@
       <option [ngValue]="room" *ngFor="let room of rooms"> {{room.name}}</option>
     </select> <br>
 
-    nome: <input [formControl] = "bookingForm.controls['nameControl']"> <br>
-    cognome : <input [formControl] = "bookingForm.controls['surnameControl']"> <br>
-    da: <input type = "date" [formControl] = "bookingForm.controls['fromControl']"> <br>
+
+
+    <div class="form-row mb-4">
+        <div class="col">
+            Nome :
+            <input type="text" class="form-control" onfocus="this.value=''" name="nome" [formControl] = "bookingForm.controls['nameControl']">
+            <div *ngIf="!bookingForm.controls['nome'].valid" class="alert alert-danger">"nome" non è valido</div>
+            <div *ngIf="bookingForm.controls['nome'].hasError('required')" class="alert alert-danger">"nome" è richiesto</div>
+        </div>
+    </div>
+
+
+    <div class="form-row mb-4">
+        <div class="col">
+            cogome :
+            <input type="text" class="form-control" onfocus="this.value=''" name="cognome" [formControl] = "bookingForm.controls['cognameControl']">
+            <div *ngIf="!bookingForm.controls['cognome'].valid" class="alert alert-danger">"cognome" non è valido</div>
+            <div *ngIf="bookingForm.controls['cognome'].hasError('required')" class="alert alert-danger">"cognome" è richiesto</div>
+        </div>
+    </div>
+
+
+
+
+      <div class="col">
+            da :
+            <input type="date" class="form-control" onfocus="this.value=''" name="nome" [formControl] = "bookingForm.controls['nameControl']">
+            <div *ngIf="!bookingForm.controls['nome'].valid" class="alert alert-danger">"nome" non è valido</div>
+            <div *ngIf="bookingForm.controls['nome'].hasError('required')" class="alert alert-danger">"nome" è richiesto</div>
+        </div>
+
     a: <input type = "date" [formControl] = "bookingForm.controls['toControl']"> <br>
-     email: <input type = "date" [formControl] = "bookingForm.controls['emailControl']"> <br>
-      colore lenzuola: <input type = "date" [formControl] = "bookingForm.controls['cLenzuolaControl']"> <br>
+    email: <input [formControl] = "bookingForm.controls['emailControl']"> <br>
+    colore lenzuola: <input [formControl] = "bookingForm.controls['cLenzuolaControl']"> <br>
     <button> Prenota </button>
 
   </form>

@@ -4,7 +4,9 @@ import { Room } from './room.model';
 import { Booking } from './booking.model';
 import {  //Importa FormBuilder e FormGroup
   FormBuilder,
-  FormGroup
+  FormGroup,
+  Validators
+
 } from '@angular/forms';
 
 
@@ -14,7 +16,7 @@ import {  //Importa FormBuilder e FormGroup
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   title = "Benvenuti all'hotel degli alberi";
   rooms = RoomList;
   selectedRoom: Room;
@@ -25,12 +27,12 @@ export class AppComponent {
   ngOnInit() {
     this.bookingForm = this.fb.group({
       roomControl: [RoomList[0]],
-      nameControl: [''],
-      surnameControl: [''],
-      fromControl: [''],
-      toControl: [''],
-      emailControl:[''],
-      cLenzuola : [''],
+      nameControl: ['name',Validators.required],
+      surnameControl: ['surname', Validators.required],
+      fromControl: ['gg/mm/2019', Validators.required],
+      toControl: ['gg/mm/2019', Validators.required],
+      emailControl:['ciao@io', Validators.required],
+      cLenzuola : ['rosse', Validators.required],
 
 
     });

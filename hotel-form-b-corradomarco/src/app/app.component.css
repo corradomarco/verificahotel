@@ -1,0 +1,22 @@
+input {
+  height: 30px;
+  font-size: 15px;
+}
+
+.alert {
+  height: 30px;
+  margin: 5px;
+  padding: 0;
+}
+
+.ng-valid:not(form) {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.selected {
+  background-color: #72B01D;
+}
