@@ -14,7 +14,8 @@
     cognome : <input [formControl] = "bookingForm.controls['surnameControl']"> <br>
     da: <input type = "date" [formControl] = "bookingForm.controls['fromControl']"> <br>
     a: <input type = "date" [formControl] = "bookingForm.controls['toControl']"> <br>
-    
+     email: <input type = "date" [formControl] = "bookingForm.controls['emailControl']"> <br>
+      colore lenzuola: <input type = "date" [formControl] = "bookingForm.controls['cLenzuolaControl']"> <br>
     <button> Prenota </button>
 
   </form>
@@ -26,4 +27,4 @@
    <li *ngFor="let pren of bookingList">
     {{pren.room.name}} : {{pren | json}}
    </li>
- </ul> 
+ </ul>

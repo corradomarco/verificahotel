@@ -8,6 +8,8 @@ export class Booking
         public   to : Date,
         public   name : String,
         public   surname: String,
+        public email : String ,
+        public cLenzuola : String,
     ) {}
     
 }

@@ -28,7 +28,11 @@ export class AppComponent {
       nameControl: [''],
       surnameControl: [''],
       fromControl: [''],
-      toControl: ['']
+      toControl: [''],
+      emailControl:[''],
+      cLenzuola : [''],
+
+
     });
 
     this.bookingList = new Array <Booking>();
@@ -46,7 +50,9 @@ export class AppComponent {
     let surname = this.bookingForm.controls['surnameControl'].value;
     let from =  this.bookingForm.controls['fromControl'].value;
     let to =  this.bookingForm.controls['toControl'].value;
-    this.bookingList.push(new Booking(room, new Date(from), new Date(to), name, surname));
+    let email = this.bookingForm.controls['emailControl'].value;
+    let cLenzuola =  this.bookingForm.controls['cLenzuolaControl'].value;
+    this.bookingList.push(new Booking(room, new Date(from), new Date(to), name, surname,email, cLenzuola));
     return false;
   }
 }
