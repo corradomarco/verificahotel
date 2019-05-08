@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+
+    <select (change)=onChange() [formControl] = "bookingForm.controls['roomControl']">
+      <option [ngValue]="room" *ngFor="let room of rooms"> {{room.name}}</option>
+    </select> <br>
+
+    nome: <input [formControl] = "bookingForm.controls['nameControl']"> <br>
+    cognome : <input [formControl] = "bookingForm.controls['surnameControl']"> <br>
+    da: <input type = "date" [formControl] = "bookingForm.controls['fromControl']"> <br>
+    a: <input type = "date" [formControl] = "bookingForm.controls['toControl']"> <br>
+    
+    <button> Prenota </button>
+
+  </form>
+
+
+  {{selectedRoom | json}}
+
+ <ul>
+   <li *ngFor="let pren of bookingList">
+    {{pren.room.name}} : {{pren | json}}
+   </li>
+ </ul> 
